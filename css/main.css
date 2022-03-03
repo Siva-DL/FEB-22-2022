@@ -1,0 +1,16 @@
+/* Element Name  */
+/* header { 10
+        background-color: lightblue;
+        font-size: 18px;
+      }
+ */
+
+/* ID Selector one*/
+#one {
+  /* background-color: lightblue; */
+}
+
+/* Class Selector 3 */
+.one {
+  background-color: red;
+}
