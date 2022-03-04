@@ -35,10 +35,12 @@
       }
       #logo {
         padding: 10px;
+        float: left;
         /* margin-right: 75px; */
       }
       nav {
         margin-left: 75px;
+        float: right;
       }
       li {
         padding: 10px;
@@ -46,6 +48,7 @@
       .mainContent {
         /* background-color: #fff; */
         width: 50%;
+        height: 50%;
         margin: 150px auto;
         padding-top: 150px;
       }
@@ -57,6 +60,59 @@
         font-weight: bold;
         font-style: italic;
         font-variant: small-caps;
+      }
+
+      /* Common Classes  */
+
+      /* FLoats  */
+      .fL {
+        float: left;
+      }
+      .fR {
+        float: right;
+      }
+
+      /* Width */
+
+      .w-33 {
+        width: 33%;
+      }
+      .w-50 {
+        width: 50%;
+      }
+      .w-75 {
+        width: 75%;
+      }
+      .w-90 {
+        width: 90%;
+      }
+
+      /* Margins  */
+
+      .m-auto {
+        margin: auto;
+      }
+
+      /* Backgrounds */
+
+      .bg-primary {
+        background-color: rgb(77, 153, 201);
+      }
+      section ul {
+        width: 75%;
+        margin: 50px auto;
+      }
+
+      section ul li {
+        width: 33%;
+        /* display: inline-block; */
+        float: left;
+        border: 1px solid red;
+        min-height: 250px;
+      }
+
+      .clear {
+        clear: both;
       }
     </style>
   </head>
@@ -71,6 +127,7 @@
             <li>Contact</li>
           </ul>
         </nav>
+        <div class="clear"></div>
       </header>
       <article class="mainContent">
         <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
@@ -79,6 +136,41 @@
           aliquam explicabo ipsa sapiente officiis.
         </p>
       </article>
+
+      <section>
+        <h1 class="w-50 m-auto bg-primary">This is Main content</h1>
+
+        <ul>
+          <li>
+            <h3>This is Heading 1</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
+              voluptas? Quos quibusdam dolores quae rem dicta veniam reiciendis
+              omnis possimus error neque velit recusandae, sint officiis alias
+              facilis nam placeat.
+            </p>
+          </li>
+          <li>
+            <h3>This is Heading 2</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+              perferendis beatae ipsa repellendus debitis quos fugit, quisquam,
+              doloremque id delectus nostrum quam recusandae aliquam porro
+              voluptatem. Et aperiam rerum praesentium.
+            </p>
+          </li>
+          <li>
+            <h3>This is Heading 3</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Excepturi quibusdam a eius exercitationem eos! Nulla ratione
+              obcaecati sint laborum amet quaerat reiciendis, autem, saepe
+              doloremque, possimus nam asperiores quis alias?
+            </p>
+          </li>
+          <div class="clear"></div>
+        </ul>
+      </section>
     </main>
   </body>
 </html>
