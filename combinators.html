@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*  Decendent Selector | Child | Sibling | Sibling All */
+      #demo > li > p > a {
+        color: red;
+      }
+      ul ~ p {
+        color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="demo">
+      <li>
+        <a href="#"> Home </a>
+        <p><a href="">Demo...</a></p>
+      </li>
+
+      <a href="#"> Home </a>
+    </ul>
+    <div>asdasdas</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, atque!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, atque!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, atque!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, atque!</p>
+  </body>
+</html>

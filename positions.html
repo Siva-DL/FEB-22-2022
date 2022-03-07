@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid;
+        background-color: lime;
+      }
+      .static {
+        position: relative;
+        z-index: 11;
+      }
+      .relative {
+        position: relative;
+        left: 100px;
+        width: 300px;
+        height: 300px;
+        border: 1px solid;
+        /* top: ;
+        right: ;
+        bottom: ; */
+      }
+      .absolute {
+        position: absolute;
+        top: 0px;
+        left: 100px;
+        background-color: aqua;
+        z-index: 0;
+      }
+      .fixed {
+        background-color: brown;
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        z-index: 999999;
+      }
+      .sticky {
+        position: sticky;
+        top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Positions -->
+
+    <div class="static">Static</div>
+    <div class="relative">
+      <div class="absolute">Absolute</div>
+    </div>
+    <div class="absolute">Absolute</div>
+    <div class="fixed">Fixed</div>
+    <div class="sticky">Sticky</div>
+    <article style="height: 150vh"></article>
+  </body>
+</html>
