@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a:link {
+        color: red;
+      }
+
+      a:visited {
+        color: blue;
+      }
+
+      a:hover {
+        color: green;
+      }
+
+      a:active {
+        color: orange;
+      }
+
+      ul li:nth-child(2n + 2) {
+        /* 2n + 2 -- 0, 1, 2*/
+        background-color: aquamarine;
+      }
+      ul li:nth-child(2n + 1) {
+        background-color: crimson;
+      }
+
+      ul li:first-child {
+        padding: 10px;
+        color: #fff;
+      }
+      ul li:last-child {
+        padding: 10px;
+        color: #000;
+      }
+      ul li:nth-child(3) {
+        background: lightsalmon;
+        padding: 10px;
+      }
+      p a:only-child {
+        background-color: bisque;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#"> Home </a>
+    <p>
+      <a href="#"> Demo </a>
+    </p>
+    <ul>
+      <li>text-shadow 1</li>
+      <li>text-shadow 2</li>
+      <li>text-shadow 3</li>
+      <li>text-shadow 4</li>
+      <li>text-shadow 5</li>
+      <li>text-shadow 6</li>
+    </ul>
+  </body>
+</html>

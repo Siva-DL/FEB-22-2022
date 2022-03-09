@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        margin: auto;
+        width: 200px;
+        /* text-decoration: underline; */
+        /* border-bottom: 2px solid; */
+        position: relative;
+      }
+      div::after {
+        content: "😀";
+      }
+      div::before {
+        content: "";
+        position: absolute;
+        width: 90px;
+        height: 3px;
+        background-color: red;
+        bottom: -10px;
+        left: 0px;
+      }
+      .drop {
+        width: 200px;
+        border: 1px solid;
+      }
+      button {
+        width: 100%;
+      }
+      ul {
+        display: none;
+      }
+      .drop:hover ul {
+        display: block;
+      }
+      p::first-line {
+        color: red;
+        letter-spacing: 5px;
+      }
+      p::first-letter {
+        font-size: 48px;
+        font-style: italic;
+        font-weight: bold;
+      }
+      p::selection {
+        background-color: crimson;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- before, after, firstline, firstLetter, selection -->
+
+    <div>This is Demo</div>
+
+    <section class="drop">
+      <button>Menu</button>
+      <ul>
+        <li>Drop Item 1</li>
+        <li>Drop Item 1</li>
+        <li>Drop Item 1</li>
+        <li>Drop Item 1</li>
+      </ul>
+    </section>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet molestiae
+      quam ab odit, aspernatur veniam omnis voluptatum eius. In ea omnis
+      provident dolorem explicabo iste quae laborum totam neque? Dignissimos!
+    </p>
+  </body>
+</html>
