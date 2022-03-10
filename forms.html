@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .inputField {
+        color: red;
+        width: 300px;
+        line-height: 30px;
+        border: none;
+        border-bottom: 2px solid red;
+      }
+      input:focus {
+        outline: none;
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="Layout.html">
+      <!-- input -->
+
+      <!-- Name -->
+      <!-- <label for="userName">user Name</label> -->
+      <input
+        type="text"
+        name="userName"
+        id="userName"
+        class="inputField"
+        placeholder="user Name"
+        required
+      />
+
+      <!-- password -->
+      <input
+        type="password"
+        name="password"
+        id="password"
+        class="inputField"
+        placeholder="password"
+        required
+      />
+      <!-- email -->
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="inputField"
+        placeholder="email"
+        autocomplete="off"
+        required
+      />
+
+      <input type="number" placeholder="number" />
+      <input type="search" placeholder="search" />
+
+      <input type="radio" name="gender" id="male" value="male" />
+      <label for="male"> Male </label>
+      <input type="radio" name="gender" id="female" value="female" />
+      <label for="female"> Female </label>
+
+      <br />
+      <input type="checkbox" name="" id="" /> Hyd
+      <input type="checkbox" name="" id="" /> Del
+      <input type="checkbox" name="" id="" /> Kerala
+
+      <input type="date" name="" id="" />
+      <input type="color" name="" id="" />
+      <input type="file" name="" id="" />
+
+      <select name="" id="">
+        <option value="none">--- Chooseone ---</option>
+        <option value="hyd">Hyd</option>
+        <option value="banglore">banglore</option>
+      </select>
+
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+
+      <input type="submit" value="sign-up" />
+      <button type="button">Sign in</button>
+    </form>
+  </body>
+</html>
