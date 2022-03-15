@@ -18,15 +18,31 @@
       }
       header {
         background-color: cadetblue;
-        width: 100%;
+        width: 20%;
         color: #fff;
         height: 40px;
         padding: 10px;
-        position: fixed;
-        z-index: 99999;
+        /* position: fixed; */
+        /* z-index: 99999; */
+        float: left;
+        height: 100vh;
+      }
+      #mainContentSection {
+        width: 80%;
+        height: 100vh;
+        float: right;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+      }
+      header nav ul {
+        margin-top: 200px;
       }
       header nav ul li {
-        display: inline-block;
+        /* display: inline-block; */
+        text-align: center;
+        margin-top: 1px;
+        background-color: #fff;
+        padding: 10px;
       }
       article {
         padding-top: 50px;
@@ -62,10 +78,12 @@
           </ul>
         </nav>
       </header>
-      <article id="home">Home</article>
-      <article class="bgDiff" id="about">About</article>
-      <article id="gallery">Gallery</article>
-      <article class="bgDiff" id="contact">Contact</article>
+      <aside id="mainContentSection">
+        <article id="home">Home</article>
+        <article class="bgDiff" id="about">About</article>
+        <article id="gallery">Gallery</article>
+        <article class="bgDiff" id="contact">Contact</article>
+      </aside>
     </main>
     <script
       src="https://kit.fontawesome.com/ba69da0079.js"

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        /* align-content: space-between; */
+        gap: 10px;
+        height: 100vh;
+        flex-flow: wrap;
+      }
+      ul li {
+        background-color: antiquewhite;
+        width: 10%;
+        height: 10vh;
+        flex-grow: 3;
+      }
+      ul li:first-child {
+        order: 4;
+        flex-grow: 1;
+      }
+      ul li:nth-child(2) {
+        order: 1;
+        flex-grow: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>text</li>
+      order 2
+      <li>Img</li>
+      order 1
+      <li>Home 3</li>
+      <li>Home 4</li>
+      <!-- <li>Home</li>
+      <li>Home</li>
+      <li>Home</li>
+      <li>Home</li>
+      <li>Home</li>
+      <li>Home</li>
+      <li>Home</li>
+      <li>Home</li>
+      <li>Home</li>
+      <li>Home</li>
+      <li>Home</li>
+      <li>Home</li> -->
+    </ul>
+    <div style="background-color: red">asdasdasdas</div>
+  </body>
+</html>
