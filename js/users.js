@@ -69,3 +69,9 @@ var users = [
     },
   },
 ];
+
+console.log(users);
+
+console.log(users[0].name);
+console.log(users[1].name);
+console.log(users[2].name);
