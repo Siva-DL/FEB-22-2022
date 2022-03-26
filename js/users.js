@@ -70,8 +70,61 @@ var users = [
   },
 ];
 
-console.log(users);
+// console.log(users);
 
-console.log(users[0].name);
-console.log(users[1].name);
-console.log(users[2].name);
+// console.log(users[0].name);
+// console.log(users[1].name);
+// console.log(users[2].name);
+
+let tableDataInfo = "";
+for (var user of users) {
+  tableDataInfo += "<tr><td>" + user.name + "</td>";
+  tableDataInfo += "<td> " + user.email + "</td>";
+  tableDataInfo += "<td> " + user.phone + " </td></tr>";
+}
+
+console.log(tableDataInfo);
+const userRecordsData = document.querySelector("#userRecordsData");
+
+userRecordsData.innerHTML = tableDataInfo;
+
+// let appendedDataRecord =
+//   "<tr><td>appendedUserName</td><td>appended@gmail.com</td><td> 123-343-545 </td></tr>";
+
+//Create Element TR:
+
+document.querySelector("#btn").addEventListener("click", addNewTD, false);
+
+document.querySelector("header").addEventListener(
+  "click",
+  function () {
+    alert(1);
+  },
+  false
+);
+function addNewTD() {
+  alert(0);
+  let TR = document.createElement("tr");
+  console.log(TR);
+
+  // Create Element #3-TD:
+  // add Dummy Text into TD
+  // append TD to TR
+
+  let nameTD = document.createElement("td");
+  nameTD.innerText = "appended Name";
+  let emailTD = document.createElement("td");
+  emailTD.innerText = "appended@ymail.com";
+  let phoneTD = document.createElement("td");
+  phoneTD.innerText = "123-234-456";
+
+  console.log(nameTD);
+
+  TR.appendChild(nameTD);
+  TR.appendChild(emailTD);
+  TR.appendChild(phoneTD);
+
+  console.log(TR);
+
+  userRecordsData.appendChild(TR);
+}

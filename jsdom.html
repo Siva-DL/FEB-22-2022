@@ -6,6 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        table,
+        td,
+        th {
+            border-collapse: collapse;
+            border-bottom: 1px solid;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,10 +29,25 @@
             <button type="button" id="btn"> Button </button>
         </header>
         <article>
-
+            <table>
+                <thead>
+                    <tr>
+                        <th> Name </th>
+                        <th> Email </th>
+                        <th> Phone </th>
+                    </tr>
+                </thead>
+                <tbody id="userRecordsData">
+                    <tr>
+                        <td> some X</td>
+                        <td> some EMail</td>
+                        <td> some Phone </td>
+                    </tr>
+                </tbody>
+            </table>
         </article>
     </main>
-    <script src="./js/events.js"></script>
+    <script src="./js/users.js"></script>
 </body>
 
 </html>
