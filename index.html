@@ -1,58 +1,218 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width" initial-scale="1.0"/>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Nunito:wght@300;500;800;900&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/39442b0661.js" crossorigin="anonymous"></script>
 
-    <title>Layout Page</title>
-    <style>
-        .head{
-        border:1px;
-        background-color:lightblue;
-        text-align:center;
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      /* font-family: 'Arimo', sans-serif; */
+      /* font-family: 'Arimo', sans-serif; */
+      font-family: 'Nunito', sans-serif;
+    }
 
-        }
-        .head1{
-            width: 400px;
-            float: left;
+    body,
+    html {
+      scroll-behavior: smooth;
+    }
 
-        }
+    header {
+      background-color: #c7c7c7;
+      width: 20%;
+      color: #fff;
+      height: 40px;
+      padding: 10px;
+      /* position: fixed; */
+      /* z-index: 99999; */
+      float: left;
+      height: 100vh;
+    }
 
+    #mainContentSection {
+      width: 80%;
+      height: 100vh;
+      float: right;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+    }
 
-    </style>
-    
+    header nav {
+      position: relative;
+      height: 100%;
+      padding-top: 150px;
+    }
+
+    header nav ul {
+      /* margin-top: 200px; */
+      padding-top: 100%;
+    }
+
+    header nav ul li {
+      /* display: inline-block; */
+      text-align: center;
+      margin-top: 1px;
+      background-color: #e6e4e2;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    header nav ul li a {
+      /* color: #3f3f3f; */
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: rgb(44, 194, 253);
+      text-shadow: 1px 2px 3px #000;
+    }
+
+    .fa {
+      color: #333;
+      font-size: 20px;
+      color: #000;
+      text-shadow: 1px 2px 3px rgb(44, 194, 253);
+      ;
+    }
+
+    article {
+      padding-top: 50px;
+      min-height: 100vh;
+      padding: 10px;
+      /* background-color: #f1f1f1; */
+      /* color: #fff; */
+      /* position: relative; */
+      /* z-index: 123; */
+    }
+
+    .user {
+      width: 75%;
+      position: absolute;
+      top: 60px;
+      left: 13%;
+    }
+
+    .user img {
+      width: 100%;
+      box-shadow: 1px 1px 8px 3px #aaa;
+      border-radius: 50%;
+    }
+
+    #home {
+      background: url(./images/leone-venter-VieM9BdZKFo-unsplash.jpg) no-repeat center;
+      background-size: cover;
+      align-items: center;
+      display: flex;
+      padding-left: 100px;
+
+    }
+
+    .homeContent {
+      width: 50%;
+    }
+
+    .welcomenote {
+      position: relative;
+      padding-left: 50px;
+    }
+
+    .welcomenote::before {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 2px;
+      left: 0px;
+      top: 8px;
+      background-color: rgb(26, 99, 182);
+    }
+
+    .userName {
+      font-size: 42px;
+      text-transform: uppercase;
+      text-shadow: 3px 3px 2px rgb(3, 151, 209);
+    }
+
+    .surName {
+      color: rgb(3, 151, 209);
+      text-shadow: 3px 3px 2px #000;
+    }
+
+    #toggleBtn {
+      border: none;
+      outline: none;
+      position: fixed;
+      right: 5%;
+      background-color: transparent;
+      top: 5%;
+    }
+
+    .fa-bars {
+      font-size: 32px;
+    }
+  </style>
 </head>
-<body>
-    <div>
-    <div class="head"> 
-        <h1>Hello</h1>
-        <p>This is a simple layout Page</p>
-    </div>
 
-    <div>
-        <div class="head1" >
-        <h2>heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, 
-            tellus ac cursus commodo, tortor mauris condimentum nibh, 
-            ut fermentum massa justo sit amet risus. Etiam porta sem malesuada 
-            magna mollis euismod. Donec sed odio dui.
-        </p>
+<body>
+  <main>
+    <button type="button" id="toggleBtn">
+      <span class="fa fa-bars"></span>
+    </button>
+    <header>
+      <nav>
+        <div class="user">
+          <img src="./images/dummy-user-img.png" alt="">
         </div>
-        <div class="head1" >
-            <h2>heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, 
-            tellus ac cursus commodo, tortor mauris condimentum nibh, 
-            ut fermentum massa justo sit amet risus. Etiam porta sem malesuada 
-            magna mollis euismod. Donec sed odio dui.
-        </p>
+        <ul>
+          <li class="menuItems">
+            <a href="#home" class=""> Home </a><span class="fa fa-user"></span>
+          </li>
+          <li class="menuItems">
+            <a href="#about"> about </a> <span class="fa fa-user"></span>
+          </li>
+          <li class="menuItems">
+            <a href="#gallery"> gallery </a> <span class="fa fa-user"></span>
+          </li>
+          <li class="menuItems">
+            <a href="#contact"> contact </a> <span class="fa fa-user"></span>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <aside id="mainContentSection">
+      <article id="home">
+        <div class="homeContent">
+          <h5 class="welcomenote"> Hello!</h5>
+          <h1 class="userName"> I'm <span class="surName"> John </span> Doe!</h1>
+          <p class="description"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem omnis esse
+            dignissimos
+            nihil at accusantium facilis, blanditiis quo architecto ipsa aliquid placeat dicta optio doloribus mollitia
+            magnam consequatur molestias voluptas.</p>
         </div>
-        <div class="head1" >
-            <h2>heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, 
-            tellus ac cursus commodo, tortor mauris condimentum nibh, 
-            ut fermentum massa justo sit amet risus. Etiam porta sem malesuada 
-            magna mollis euismod. Donec sed odio dui.
-        </p>
-        </div>
-    </div>
-    </div>
+      </article>
+      <article class="bgDiff" id="about">About</article>
+      <article id="gallery">Gallery</article>
+      <article class="bgDiff" id="contact">Contact</article>
+    </aside>
+  </main>
+  <script>
+    document.querySelector('#toggleBtn').onclick = function () {
+      document.querySelector('header').style.width = "10%";
+
+      debugger;
+      console.log(document.querySelector('header').children);
+    }
+  </script>
 </body>
+
+</html>

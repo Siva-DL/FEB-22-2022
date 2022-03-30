@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>Document</title>
 </head>
 
@@ -15,8 +16,8 @@
         <div class="col-md-4">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Recipient's username" id="userName">
-                <button class="btn btn-outline-secondary" type="button" id="addBtn">Add</button>
-                <button class="btn btn-outline-success d-none" type="button" id="saveBtn">Save</button>
+                <button class="btn btn-info" type="button" id="addBtn">Add <i class="bi bi-bag-plus-fill"></i></button>
+                <button class="btn btn-success d-none" type="button" id="saveBtn">Save</button>
             </div>
             <table class="table table-dark">
                 <thead>
@@ -24,18 +25,14 @@
                         <th>
                             Name
                         </th>
-                        <th>
+                        <th class="text-center">
                             Edit / Delete
                         </th>
                     </tr>
                 </thead>
                 <tbody id="demoTable">
-                    <tr class="table-active">
-                        <td> Somex </td>
-                        <td class="text-end">
-                            <button type="button" id="edit" class="btn btn-primary"> Edit </button>
-                            <button type="button" id="delete" class="btn btn-danger"> Delete </button>
-                        </td>
+                    <tr class="table-active noRecords">
+                        <td colspan="2" class="text-center"> No Records Added </td>
                     </tr>
                 </tbody>
             </table>
@@ -50,60 +47,81 @@
         let saveBtn = document.querySelector('#saveBtn');
         deleteBtn = document.querySelector('#delete');
         userName = document.querySelector('#userName');
+        const stringRegEx = /^[a-zA-Z]+$/;
 
+        function validateUser(name) {
+            if (!stringRegEx.test(name) || name === "") {
+                return false;
+            } else {
+                return true;
+            }
+        }
 
         addBtn.addEventListener('click', function () {
-            // console.log(this);
-            console.log(userName.value)
+            validateUser(userName.value);
 
-            let TR = document.createElement('tr');
-            let nameTd = document.createElement('td');
-            nameTd.innerText = userName.value;
+            if (validateUser(userName.value)) {
 
 
+                // console.log(this);
+                console.log(userName.value)
+
+                let TR = document.createElement('tr');
+                let nameTd = document.createElement('td');
+                nameTd.innerText = userName.value;
 
 
-            let editDeletErap = document.createElement('td');
-            editDeletErap.className = "text-end";
-            // editDeletErap.setAttribute("class", "text-end") 
-
-            let editBtn = document.createElement('button');
-            editBtn.innerText = "Edit";
-            editBtn.className = "btn btn-primary";
-            let delBtn = document.createElement('button');
-            delBtn.className = "btn btn-danger";
-            delBtn.innerText = "Delete";
-
-            editDeletErap.appendChild(editBtn);
-            editDeletErap.appendChild(delBtn);
-
-            TR.append(nameTd);
-            TR.append(editDeletErap);
-
-            console.log(TR);
 
 
-            document.querySelector('#demoTable').appendChild(TR);
+                let editDeletErap = document.createElement('td');
+                editDeletErap.className = "text-end";
+                // editDeletErap.setAttribute("class", "text-end") 
+
+                let editBtn = document.createElement('button');
+                editBtn.innerHTML = '<i class="bi bi-pencil-square"></i>';
+                editBtn.className = "btn btn-primary";
+                let delBtn = document.createElement('button');
+                delBtn.className = "btn btn-danger";
+                delBtn.innerHTML = '<i class="bi bi-trash-fill"></i>';
+
+                editDeletErap.appendChild(editBtn);
+                editDeletErap.appendChild(delBtn);
+
+                TR.append(nameTd);
+                TR.append(editDeletErap);
+
+                console.log(TR);
+
+                document.querySelector('.noRecords').style.display = "none";
+                document.querySelector('#demoTable').appendChild(TR);
 
 
-            userName.value = "";
+                userName.value = "";
 
-            editBtn.addEventListener('click', function () {
-                // debugger;
-                // console.log(this)
-                let editValue = TR.children[0];
-                userName.value = editValue.innerText;
-                saveBtn.className = "";
-                addBtn.className = "d-none";
+                editBtn.addEventListener('click', function () {
+                    // debugger;
+                    // console.log(this)
+                    let editValue = this.parentNode.parentNode.children[0];
+                    userName.value = editValue.innerText;
+                    saveBtn.className = "";
+                    addBtn.className = "d-none";
 
-                saveBtn.addEventListener('click', function () {
-                    console.log(userName.value)
-                    // let editedValue = userName.value;
-                    editValue.innerText = userName.value;
-                    this.className = "d-none";
-                    addBtn.className = "";
-                })
-            });
+                    saveBtn.onclick = function () {
+                        console.log(userName.value)
+                        // let editedValue = userName.value;
+                        editValue.innerText = userName.value;
+                        this.className = "d-none";
+                        addBtn.className = "";
+
+                        // Task: rest the Input Field:
+                    };
+                });
+
+                // Task: to Delete the Entier TR:
+            } else {
+                alert('Invalid User Name');
+            }
+
         })
 
     </script>
