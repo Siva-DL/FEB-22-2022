@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <style>
+        .bg-custom-img {
+            background: url(./images/c-d-x-5qT09yIbROk-unsplash.jpg) no-repeat center;
+            background-size: cover;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        .bg-20A5E8 {
+            background-color: #20A5E8 !important;
+        }
+
+        .alert {
+            padding: 5px !important;
+            text-align: center;
+        }
+    </style>
+    <title>Form-Template</title>
+</head>
+
+<body>
+    <main class="container-fluid pt-3 bg-custom-img">
+        <div class="row h-100 align-items-md-center">
+            <div class="col-md-4 offset-md-2">
+                <div class="card bg-dark text-white">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="username" class="form-label fs-5">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="username"
+                                autocomplete="off">
+                            <div class="alert alert-danger d-none" id="errorUser">
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+                                <span class="ps-1">
+                                    Please enter a valid Name
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label fs-5">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="password"
+                                autocomplete="off">
+                            <div class="alert alert-danger d-none" id="errorPassword">
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+                                <span class="ps-1">
+                                    Please enter a valid Password min Lenthg is 8;
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact" class="form-label fs-5">Contact</label>
+                            <input type="text" class="form-control" id="contact" placeholder="contact"
+                                autocomplete="off">
+                            <div class="alert alert-danger d-none" id="errorContact">
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+                                <span class="ps-1">
+                                    Please enter a valid Contact Number
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label fs-5">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com"
+                                autocomplete="off">
+                            <div class="alert alert-danger d-none" id="errorEmail">
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+                                <span class="ps-1">
+                                    Please enter a valid Email
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="city" class="form-label fs-5">City</label>
+                            <select class="form-select" id="city">
+                                <option selected>-- Choose a City --</option>
+                                <option value="HYD">HYD</option>
+                                <option value="BANG">BANG</option>
+                                <option value="DEL">DEL</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="male">
+                                <label class="form-check-label" for="male">
+                                    male
+                                </label>
+
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="female">
+                                <label class="form-check-label" for="female">
+                                    female
+                                </label>
+                            </div>
+                            <div class="alert alert-danger d-none" id="gender">
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+                                <span class="ps-1">
+                                    Please choose a Gender
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="agree" id="tandc">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Agree Terms and Conditions
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-warning w-100 fw-bolder text-uppercase" id="signUpBtn">
+                                Sign
+                                up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        let signUpBtn, username, password, contact, email, city, male, female, tandc;
+
+
+        signUpBtn = document.querySelector('#signUpBtn')
+        username = document.querySelector('#username')
+        password = document.querySelector('#password')
+        contact = document.querySelector('#contact')
+        email = document.querySelector('#email')
+        city = document.querySelector('#city')
+        tandc = document.querySelector('#tandc')
+
+        male = document.querySelector('#male')
+        female = document.querySelector('#female')
+
+
+
+
+        signUpBtn.onclick = function () {
+            const stringRegEx = /^[a-zA-Z]{3,}$/;
+            const numberRegEx = /^[0-9]+$/;
+            const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
+            const passwordRegEx = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+            if (!stringRegEx.test(username.value)) {
+                document.querySelector('#errorUser').className = "alert alert-danger";
+                // return false;
+            } else if (!passwordRegEx.test(password.value)) {
+                document.querySelector('#errorUser').className = "d-none";
+                document.querySelector('#errorPassword').className = "alert alert-danger";
+            } else if (!numberRegEx.test(contact.value)) {
+                document.querySelector('#errorPassword').className = "d-none";
+                document.querySelector('#errorContact').className = "alert alert-danger";
+            }
+            else if (!emailRegEx.test(email.value)) {
+                document.querySelector('#errorContact').className = "d-none";
+                document.querySelector('#errorEmail').className = "alert alert-danger";
+            } else {
+                alert('Success');
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>
