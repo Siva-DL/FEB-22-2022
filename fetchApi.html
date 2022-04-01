@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li data-item="1" class="fetchItemData"> Record1 </li>
+        <li data-item="2" class="fetchItemData"> Record2 </li>
+        <li data-item="3" class="fetchItemData"> Record3 </li>
+        <li data-item="" class="fetchItemData"> Record3 </li>
+    </ul>
+    <ul id="bindData">
+
+    </ul>
+
+    <script>
+        var bindData = document.querySelector('#bindData');
+
+        for (var j = 0; j < document.getElementsByClassName('fetchItemData').length; j++) {
+            document.getElementsByClassName('fetchItemData')[j].onclick = function () {
+                var getAttrOfItem = this.getAttribute('data-item');
+
+                alert(getAttrOfItem);
+                fetch('https://jsonplaceholder.typicode.com/photos/' + getAttrOfItem)
+                    .then(function (res) {
+                        return res.json();
+                    })
+                    .then(function (data) {
+                        // success Data
+                        console.log(data);
+
+                        if (data[0] !== undefined) {
+                            // console.log(data);
+                            var Li = "";
+                            for (var i = 0; i < data.length; i++) {
+                                Li += "<li>" + data[i].name + "</li>"
+                            }
+                            bindData.innerHTML = Li;
+                        } else {
+                            bindData.innerHTML = "<li>" + data.name + "</li>";
+                        }
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                    })
+
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

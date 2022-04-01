@@ -84,7 +84,7 @@
                         <div class="mb-3">
                             <label for="city" class="form-label fs-5">City</label>
                             <select class="form-select" id="city">
-                                <option selected>-- Choose a City --</option>
+                                <option value="none">-- Choose a City --</option>
                                 <option value="HYD">HYD</option>
                                 <option value="BANG">BANG</option>
                                 <option value="DEL">DEL</option>
@@ -147,28 +147,82 @@
 
 
 
+
+
+
         signUpBtn.onclick = function () {
+            var genderCheck;
+
+            if (male.checked) {
+                genderCheck = male.value;
+            } else if (female.checked) {
+                genderCheck = female.value;
+            }
+
             const stringRegEx = /^[a-zA-Z]{3,}$/;
             const numberRegEx = /^[0-9]+$/;
             const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
             const passwordRegEx = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
-            if (!stringRegEx.test(username.value)) {
-                document.querySelector('#errorUser').className = "alert alert-danger";
-                // return false;
-            } else if (!passwordRegEx.test(password.value)) {
-                document.querySelector('#errorUser').className = "d-none";
-                document.querySelector('#errorPassword').className = "alert alert-danger";
-            } else if (!numberRegEx.test(contact.value)) {
-                document.querySelector('#errorPassword').className = "d-none";
-                document.querySelector('#errorContact').className = "alert alert-danger";
-            }
-            else if (!emailRegEx.test(email.value)) {
-                document.querySelector('#errorContact').className = "d-none";
-                document.querySelector('#errorEmail').className = "alert alert-danger";
+            // if (!stringRegEx.test(username.value)) {
+            //     document.querySelector('#errorUser').className = "alert alert-danger";
+            //     // return false;
+            // } else if (!passwordRegEx.test(password.value)) {
+            //     document.querySelector('#errorUser').className = "d-none";
+            //     document.querySelector('#errorPassword').className = "alert alert-danger";
+            // } else if (!numberRegEx.test(contact.value)) {
+            //     document.querySelector('#errorPassword').className = "d-none";
+            //     document.querySelector('#errorContact').className = "alert alert-danger";
+            // }
+            // else if (!emailRegEx.test(email.value)) {
+            //     document.querySelector('#errorContact').className = "d-none";
+            //     document.querySelector('#errorEmail').className = "alert alert-danger";
+            // } else if (city.value === "none") {
+            //     document.querySelector('#errorEmail').className = "d-none";
+            //     alert('Please choose a city')
+            // }
+            // else if (genderCheck === undefined) {
+            //     alert('Please choose a gender')
+            // }
+            // else if (!tandc.checked) {
+            //     alert('agree the terms and conditions!')
+            // }
+            // else {
+
+            //     var arrOfuser;
+
+
+            //     localStorage.setItem('users', 'test')
+
+
+            // }
+
+
+
+            var arrOfuser;
+
+
+            var userRecord = {};
+
+            userRecord.username = username.value;
+            userRecord.password = password.value;
+            userRecord.contact = contact.value;
+            userRecord.email = email.value;
+            userRecord.city = city.value;
+            userRecord.gender = genderCheck;
+            userRecord.tandc = tandc.checked;
+
+
+            console.log(userRecord);
+
+            if (JSON.parse(localStorage.getItem('users'))) {
+                arrOfuser = JSON.parse(localStorage.getItem('users'));
             } else {
-                alert('Success');
+                arrOfuser = [];
             }
 
+
+            arrOfuser.push(userRecord);
+            localStorage.setItem('users', JSON.stringify(arrOfuser));
 
         }
 

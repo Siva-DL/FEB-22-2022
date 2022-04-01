@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        #Home,
+        #About {
+            height: 100vh;
+            background-color: crimson;
+            color: #fff;
+            padding-top: 75px;
+        }
+
+        #About {
+            background: paleturquoise;
+        }
+
+        header {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        header nav ul li {
+            padding: 10px;
+        }
+
+        header nav div {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div>
+                Logo
+            </div>
+            <ul>
+                <li data-MenuItem="home" class="menuItems">
+                    Home
+                </li>
+                <li data-MenuItem="about" class="menuItems">
+                    About
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="bindDataHtml"></main>
+    <script>
+        var menuItems = document.getElementsByClassName('menuItems');
+
+        for (var i = 0; i < menuItems.length; i++) {
+
+            menuItems[i].onclick = function () {
+                // console.log(this);
+                var menuItemsVal = this.getAttribute('data-MenuItem') + ".html";
+                console.log(menuItemsVal);
+
+
+                fetch("./" + menuItemsVal)
+                    .then(function (res) {
+                        return res.text();
+                    })
+                    .then(function (data) {
+                        console.log(data);
+                        document.querySelector('#bindDataHtml').innerHTML = data;
+                    })
+            }
+
+        }
+    </script>
+</body>
+
+</html>
